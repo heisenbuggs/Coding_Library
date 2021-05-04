@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 const int size = 2001;
 
 void functions() {

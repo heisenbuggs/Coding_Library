@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+// Time Compexity = O(V+E)
+
 const int n = 1000;
 
 /*

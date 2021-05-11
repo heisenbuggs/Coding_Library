@@ -1,4 +1,4 @@
-#include <bits/stdc.h>
+#include <bits/stdc++.h>
 using namespace std;
 const int n = 1000;
 
@@ -10,9 +10,9 @@ const int n = 1000;
 *   adj : adjacency list graph
 */
 
-vector<int> vis(n,0), dist(n,0), ways(n,0), adj(n);
+vector<int> vis(n,0), dist(n,0), ways(n,0);
 
-void bfs(int src) {
+void bfs(vector<vector<int>> adj, int src) {
     queue<int> q;
     q.push(src);
     vis[src] = 1;

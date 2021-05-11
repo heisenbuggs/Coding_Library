@@ -10,22 +10,24 @@ const int n = 1000;
 *   adj : adjacency list graph
 */
 
-vector<int> vis(n,0), dist(n,0), ways(n,0);
+vector<int> vis(n,0), dist(n,0), ways(n,0), parent(n);
 
 void bfs(vector<vector<int>> adj, int src) {
     queue<int> q;
     q.push(src);
     vis[src] = 1;
     ways[src] = 1;
+    parent[src] = -1;
     while(!q.empty()) {
         int node = q.front();
         q.pop();
         for(auto x: adj[node]) {
             if(!vis[x]) {
+                q.push(x);
                 vis[x] = 1;
                 dist[x] = dist[node] + 1;
                 ways[x] += ways[node];
-                q.push(x);
+                parent[x] = node;
             }
             else {
                 if(dist[node]+1==dist[x]) {
@@ -35,4 +37,18 @@ void bfs(vector<vector<int>> adj, int src) {
         }
     }
     return;
+}
+
+/*
+* Finding the Shortest Path from source to some vertex u.
+*/
+
+vector<int> findPath(vector<int> parent, int u) {
+    vector<int> path;
+    if(!vis[u]) cout << "No Path\n";
+    else {
+        for(int v=u; v!=-1; v=parent[v]) path.push_back(v);
+        reverse(path.begin(), path.end());
+    }
+    return path;
 }

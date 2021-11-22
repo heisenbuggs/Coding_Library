@@ -58,78 +58,79 @@ void primeFactor(int num);
 //*!*!*!*!*!*!*!*!*!*!*!*! Solve !*!*!*!*!*!*!*!*!*!*!*!//
 
 void itzprasuk() {
-	int n, k, p, q;
+    int n, k, p, q;
 	
 }
 
 //*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!//
 
 int32_t main() {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL); cout.tie(NULL);
-	#ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
-	#endif
-	int T = clock();
-	int t = 1;
-	cin >> t;
-	while(t--) {
-		itzprasuk();
-	}
-	cerr << "TIME : " << 1000 * (double)(clock()-T)/CLOCKS_PER_SEC << " ms\n";
-	T = clock();
-	return 0;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL); cout.tie(NULL);
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    #endif
+    int T = clock();
+    int t = 1;
+    cin >> t;
+    while(t--) {
+        itzprasuk();
+    }
+    cerr << "TIME : " << 1000 * (double)(clock()-T)/CLOCKS_PER_SEC << " ms\n";
+    T = clock();
+    return 0;
 }
 
 //*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!//
 
 int mpow(int base, int exp) {
-	base %= mod;
-	int result = 1;
-	while (exp > 0) {
-		if (exp & 1) result = ((int)result * base) % mod;
-		base = ((int)base * base) % mod;
-		exp >>= 1;
-	}
-  return result;
+    base %= mod;
+    int result = 1;
+    while (exp > 0) {
+	    if (exp & 1) result = ((int)result * base) % mod;
+	    base = ((int)base * base) % mod;
+	    exp >>= 1;
+    }
+    return result;
 }
 
 bool isPrime(int num) {
-	if(num <= 1) return false;
-	for(int i=2; i*i <= num; i++)
-		if(num%i == 0) return false;
-	return true;
+    if(num <= 1) return false;
+    for(int i=2; i*i <= num; i++)
+        if(num%i == 0) return false;
+    return true;
 }
 
 bool isPowerTwo(int x) {
-	return (x && !(x & (x-1)));
+    return (x && !(x & (x-1)));
 }
 
 bool isSubstring(string s1, string s2) {
-	if(s1.find(s2) != string::npos) return true;
-	else return false;
+    if(s1.find(s2) != string::npos) return true;
+    else return false;
 }
 
 void factorial(int num) {
-	fact[0] = 1; 
-	for(int i = 1; i <= num; i++)
-		fact[i] = i * fact[i - 1];
+    fact[0] = 1; 
+    for(int i = 1; i <= num; i++)
+        fact[i] = i * fact[i - 1];
 }
+
 void factmod(int num) {
-	fact[0] = 1; 
-	for(int i = 1; i <= num; i++) 
-		fact[i] = (i * fact[i - 1]) % mod;
+    fact[0] = 1; 
+    for(int i = 1; i <= num; i++) 
+        fact[i] = (i * fact[i - 1]) % mod;
 }
 
 void primeFactor(int num){
-	for(int i=2; i<=num; i++)
-	if(num%i == 0){
-		int cnt = 0;
-		while(num%i == 0)
-		cnt++ , num /= i;
-		cout << i << "^" << cnt << " ";
-	}
-	if(num > 1)
-	cout << num << "^" << "1" << " ";
+    for(int i=2; i<=num; i++)
+    if(num%i == 0){
+        int cnt = 0;
+        while(num%i == 0)
+        cnt++ , num /= i;
+        cout << i << "^" << cnt << " ";
+    }
+    if(num > 1)
+    cout << num << "^" << "1" << " ";
 }

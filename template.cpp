@@ -27,8 +27,6 @@ using namespace std;
 #define hcf(x, y)           __gcd(x, y)
 #define lcm(x, y)           boost::math::lcm(x,y)
 #define setpre(x, y)        fixed << setprecision(y) << x
-#define maax(a, b, c)       max(a, max(b, c))
-#define miin(a, b, c)       min(a, min(b, c))
 #define zerolead(x)         __builtin_clzll(x)
 #define zerotrail(x)        __builtin_ctzll(x)
 #define setbits(x)          __builtin_popcountll(x)

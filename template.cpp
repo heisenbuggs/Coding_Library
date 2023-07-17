@@ -55,7 +55,7 @@ void primeFactor(int num);
 
 //*!*!*!*!*!*!*!*!*!*!*!*! Solve !*!*!*!*!*!*!*!*!*!*!*!//
 
-void itzprasuk() {
+void heisenbuggs() {
     int n, k, p, q;
 	
 }
@@ -73,7 +73,7 @@ int32_t main() {
     int t = 1;
     cin >> t;
     while(t--) {
-        itzprasuk();
+        heisenbuggs();
     }
     cerr << "TIME : " << 1000 * (double)(clock()-T)/CLOCKS_PER_SEC << " ms\n";
     T = clock();
